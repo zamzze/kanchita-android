@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:padding="40dp"
+        android:background="@drawable/bg_card_dark">
+
+        <!-- Tabs -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <Button
+                android:id="@+id/btn_tab_login"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Iniciar sesión"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/accent"
+                android:layout_marginEnd="4dp"/>
+
+            <Button
+                android:id="@+id/btn_tab_register"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Registrarse"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/surface_variant"
+                android:layout_marginStart="4dp"/>
+
+        </LinearLayout>
+
+        <!-- Email -->
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:hint="Correo electrónico"
+            android:inputType="textEmailAddress"
+            android:imeOptions="actionNext"
+            android:nextFocusDown="@id/et_password"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white_40"
+            android:background="@drawable/bg_input"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Password -->
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:imeOptions="actionNext"
+            android:nextFocusDown="@id/et_confirm_password"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white_40"
+            android:background="@drawable/bg_input"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Confirm Password (solo registro) -->
+        <LinearLayout
+            android:id="@+id/layout_confirm_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/et_confirm_password"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:hint="Confirmar contraseña"
+                android:inputType="textPassword"
+                android:imeOptions="actionDone"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white_40"
+                android:background="@drawable/bg_input"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_marginBottom="12dp"/>
+
+        </LinearLayout>
+
+        <!-- Error -->
+        <TextView
+            android:id="@+id/tv_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/error_red"
+            android:textSize="13sp"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone"/>
+
+        <!-- Botón acción -->
+        <Button
+            android:id="@+id/btn_action"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Entrar"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/accent"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Loading -->
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</FrameLayout>

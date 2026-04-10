@@ -1,0 +1,79 @@
+{
+  "version": "1.0",
+
+  "plugins": [
+    {
+      "name": "filesystem",
+      "enabled": true,
+      "write": true,
+      "watch": true
+    },
+    {
+      "name": "terminal",
+      "enabled": true
+    },
+    {
+      "name": "git",
+      "enabled": true
+    },
+    {
+      "name": "http",
+      "enabled": true
+    },
+    {
+      "name": "search",
+      "enabled": true
+    },
+    {
+      "name": "codebase",
+      "enabled": true
+    }
+  ],
+
+  "permissions": {
+    "allow_file_read": true,
+    "allow_file_write": true,
+    "allow_file_delete": true,
+    "allow_command_execution": true,
+    "allow_git_operations": true,
+    "allow_network_requests": true
+  },
+
+  "project": {
+    "type": "android",
+    "name": "Android TV Streaming App",
+    "description": "Streaming app using APIs and m3u8 sources for Android TV",
+
+    "stack": {
+      "language": "kotlin",
+      "build_system": "gradle",
+      "architecture": "mvvm",
+      "ui": "jetpack-compose",
+      "platform": "android-tv",
+      "network": "retrofit",
+      "async": "coroutines",
+      "media": "exoplayer"
+    }
+  },
+
+  "context": {
+    "current_state": "project partially built with working features",
+    "goal": "complete streaming app with stable playback, clean UI, and scalable architecture",
+    "focus": [
+      "performance optimization",
+      "clean architecture",
+      "modular code",
+      "error handling",
+      "scalability"
+    ]
+  },
+
+  "behavior": {
+    "code_style": "clean, production-ready, well-structured",
+    "architecture_enforcement": true,
+    "prefer_existing_code": true,
+    "avoid_rewrites": true,
+    "explanations": "concise",
+    "debugging": "step-by-step"
+  }
+}

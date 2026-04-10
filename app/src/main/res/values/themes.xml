@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.StreamingApp" parent="Theme.Leanback">
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:colorPrimary">@color/accent</item>
+        <item name="android:colorAccent">@color/accent</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white_70</item>
+        <item name="android:colorControlHighlight">@color/focused_overlay</item>
+    </style>
+
+</resources>

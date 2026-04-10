@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.samsse.streamingapp.ui.splash.SplashFragment"
+        android:label="Splash">
+        <action
+            android:id="@+id/action_splash_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_splash_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.samsse.streamingapp.ui.auth.LoginFragment"
+        android:label="Login">
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.samsse.streamingapp.ui.home.HomeFragment"
+        android:label="Home">
+        <action
+            android:id="@+id/action_home_to_detail"
+            app:destination="@id/detailFragment"/>
+        <action
+            android:id="@+id/action_home_to_search"
+            app:destination="@id/searchFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.samsse.streamingapp.ui.detail.DetailFragment"
+        android:label="Detail">
+        <argument
+            android:name="contentId"
+            app:argType="string"/>
+        <argument
+            android:name="contentType"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_detail_to_player"
+            app:destination="@id/playerFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.samsse.streamingapp.ui.search.SearchFragment"
+        android:label="Search">
+        <action
+            android:id="@+id/action_search_to_detail"
+            app:destination="@id/detailFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/playerFragment"
+        android:name="com.samsse.streamingapp.ui.player.PlayerFragment"
+        android:label="Player">
+        <argument
+            android:name="contentId"
+            app:argType="string"/>
+        <argument
+            android:name="contentType"
+            app:argType="string"/>
+        <argument
+            android:name="showAds"
+            app:argType="boolean"/>
+        <argument
+            android:name="streamsJson"
+            app:argType="string"/>
+        <argument
+            android:name="subtitleUrl"
+            app:argType="string"
+            android:defaultValue=""/>
+    </fragment>
+
+</navigation>

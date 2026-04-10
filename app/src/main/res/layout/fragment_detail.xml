@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <!-- Backdrop siempre visible de fondo -->
+    <ImageView
+        android:id="@+id/iv_backdrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:alpha="0.4"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_detail_gradient"/>
+
+    <!-- Info principal — ocupa toda la pantalla -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="48dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/iv_poster"
+            android:layout_width="140dp"
+            android:layout_height="210dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/bg_card_dark"
+            android:layout_marginEnd="40dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_type_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_badge"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:id="@+id/tv_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white_70"
+                    android:textSize="14sp"
+                    android:layout_marginEnd="12dp"/>
+
+                <TextView
+                    android:id="@+id/tv_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white_70"
+                    android:textSize="12sp"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:background="@drawable/bg_rating"
+                    android:layout_marginEnd="12dp"/>
+
+                <TextView
+                    android:id="@+id/tv_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white_70"
+                    android:textSize="14sp"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white_70"
+                android:textSize="13sp"
+                android:lineSpacingMultiplier="1.5"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:layout_marginBottom="16dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <Button
+                    android:id="@+id/btn_play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:text="▶  Reproducir"
+                    android:textColor="@color/background"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_button_focus"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:layout_marginEnd="12dp"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:focusableInTouchMode="false"/>
+
+                <Button
+                    android:id="@+id/btn_my_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:text="+  Mi lista"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:background="@drawable/bg_button_secondary_focus"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:focusable="true"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_genres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white_40"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Tabs siempre visibles al fondo — contenido aparece al navegar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:background="#EE000000">
+
+        <!-- Barra de tabs — SIEMPRE visible -->
+        <LinearLayout
+            android:id="@+id/layout_tabs_bar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tab_episodes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="EPISODIOS"
+                android:textColor="@color/white_40"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:background="@drawable/bg_tab_selector"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tab_more"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="MÁS COMO ESTO"
+                android:textColor="@color/white_40"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:background="@drawable/bg_tab_selector"/>
+
+        </LinearLayout>
+
+        <!-- Contenido expandible — oculto por defecto -->
+        <LinearLayout
+            android:id="@+id/layout_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!-- Selector de temporadas -->
+            <HorizontalScrollView
+                android:id="@+id/scroll_seasons"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#AA000000"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/layout_seasons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"/>
+
+            </HorizontalScrollView>
+
+            <!-- RecyclerView episodios -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_content"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="8dp"
+                android:clipToPadding="false"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>
